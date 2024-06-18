@@ -10,7 +10,7 @@ const pool = new Pool({
     host: 'localhost',
     database: 'movies',
     port: 5432,
-  });
+});
   
 
 app.get('/', (req, res) => {
