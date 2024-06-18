@@ -4,14 +4,10 @@ const { Pool } = require('pg');
 const app = express();
 const port = 3000;
 
-const pool = new Pool({
-    user: 'postgres',
-    password: process.env.DB_PASSWORD,
-    host: 'localhost',
-    database: 'movies',
-    port: 5432,
-});
-  
+
+const connectionString = process.env.DB_URL;
+
+const pool = new Pool({connectionString: connectionString});
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
